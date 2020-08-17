@@ -55,8 +55,8 @@ public class Macao extends Game {
 
         cardStack.push(deck.drawCard());
         int playerIdx = 0;
-        PictureTest playerHandPanel = new PictureTest(players.get(0).getHand());
-        sleep(50000);
+        PrimeThread primeThread = new PrimeThread(players.get(0));
+        primeThread.run();
 
         while (true) {
             Player currentPlayer = players.get(playerIdx);
